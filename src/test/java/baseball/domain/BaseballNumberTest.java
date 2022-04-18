@@ -39,4 +39,10 @@ class BaseballNumberTest {
     void notContainZeroTest(){
         assertThrows(IllegalArgumentException.class, () -> new BaseballNumber("120"));
     }
+
+    @DisplayName("자리수 중복시 IllegalArgumentException 발생")
+    @Test
+    void duplicateDigitTest(){
+        assertThrows(IllegalArgumentException.class, () -> new BaseballNumber("122"));
+    }
 }
